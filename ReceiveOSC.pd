@@ -1,0 +1,10 @@
+#N canvas 386 97 389 530 10;
+#X obj 96 82 oscparse;
+#X obj 96 112 list trim;
+#X obj 96 140 route movuino;
+#X obj 96 168 print;
+#X obj 96 53 netreceive -b -u 7400;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 4 0 0 0;
