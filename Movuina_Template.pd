@@ -1,28 +1,28 @@
-#N canvas 788 146 1007 831 12;
-#X obj 62 163 mrpeach/unpackOSC;
-#X obj 62 200 mrpeach/pipelist;
-#X obj 101 431 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 6377 0;
-#X msg 62 95 port 3000;
-#X obj 62 129 mrpeach/udpreceive;
-#X obj 62 71 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X obj 81 431 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 6398 0;
-#X obj 121 431 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 9550 0;
-#X obj 161 499 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 6350 0;
-#X obj 141 499 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 6350 0;
-#X obj 181 499 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 6350 0;
-#X obj 221 554 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 10573 0;
-#X obj 201 554 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 8843 0;
-#X obj 241 554 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 2718 0;
+#N canvas -8 -8 1920 1117 12;
+#X obj 307 308 mrpeach/unpackOSC;
+#X obj 307 345 mrpeach/pipelist;
+#X obj 346 576 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 8153 0;
+#X msg 307 240 port 3000;
+#X obj 307 274 mrpeach/udpreceive;
+#X obj 307 216 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 326 576 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 6322 0;
+#X obj 366 576 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 9052 0;
+#X obj 406 644 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 5980 0;
+#X obj 386 644 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 6260 0;
+#X obj 426 644 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 6300 0;
+#X obj 466 699 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 5657 0;
+#X obj 446 699 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 9230 0;
+#X obj 486 699 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 5938 0;
 #N canvas 0 50 1016 300 dataRemap 0;
 #X obj 52 87 inlet;
 #X obj 52 173 outlet;
@@ -88,37 +88,73 @@
 #X connect 34 0 35 0;
 #X connect 35 0 33 0;
 #X coords 0 -1 1 1 167 20 1 100 100;
-#X restore 81 398 pd dataRemap;
-#X obj 62 359 unpack s f f f f f f f f f;
-#X text 76 566 ax;
-#X text 96 566 ay;
-#X text 116 566 az;
-#X text 136 634 gx;
-#X text 156 634 gy;
-#X text 176 634 gz;
-#X text 195 690 mx;
-#X text 215 690 my;
-#X text 235 690 mz;
-#X obj 62 42 loadbang;
-#X obj 375 398 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X restore 326 543 pd dataRemap;
+#X obj 307 504 unpack s f f f f f f f f f;
+#X text 321 711 ax;
+#X text 341 711 ay;
+#X text 361 711 az;
+#X text 381 779 gx;
+#X text 401 779 gy;
+#X text 421 779 gz;
+#X text 440 835 mx;
+#X text 460 835 my;
+#X text 480 835 mz;
+#X obj 307 187 loadbang;
+#X obj 620 543 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 375 359 route accelerometer gyroscope magnetometer;
-#X obj 472 416 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 620 504 route accelerometer gyroscope magnetometer;
+#X obj 717 561 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 569 440 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 814 585 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X text 275 398 accelerometer;
-#X text 400 415 gyroscope;
-#X text 475 440 magnetometer;
-#X obj 776 359 unpack i f;
-#X obj 62 231 route /streamo /repetitions /gesture;
-#X floatatom 776 395 5 0 0 0 - - -;
-#X floatatom 843 436 5 0 0 0 - - -;
-#X text 676 396 Gesture index;
-#X text 701 438 Gesture progression;
+#X text 520 543 accelerometer;
+#X text 645 560 gyroscope;
+#X text 720 585 magnetometer;
+#X obj 307 376 route /streamo /repetitions /gesture;
+#X floatatom 1021 540 5 0 0 0 - - -;
+#X floatatom 1088 581 5 0 0 0 - - -;
+#X text 921 541 Gesture index;
+#X text 946 583 Gesture progression;
+#X obj 1021 504 unpack f f;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X coords 0 1 100 -1 900 750 1 0 0;
+#X restore 265 160 graph;
+#X text 65 469 Receive data from Movuina;
+#X obj 349 1376 mrpeach/udpsend;
+#X msg 476 1311 connect 127.0.0.1 3001;
+#X obj 476 1263 loadbang;
+#X obj 476 1289 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 349 1263 mrpeach/packOSC;
+#X obj 349 1022 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+0 1;
+#X floatatom 571 1019 10 0 0 0 - - -;
+#X floatatom 648 1019 10 0 0 0 - - -;
+#X floatatom 727 1019 10 0 0 0 - - -;
+#X text 314 996 Vibrator ON/OFF;
+#X text 573 991 Vibrator PULSE ON / OFF / N repetitions;
+#X obj 507 1160 list;
+#X obj 507 1020 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 497 995 Pulse!;
+#X msg 349 1194 send /vibro/now \$1;
+#X msg 507 1194 send /vibro/pulse \$1 \$2 \$3;
+#X text 103 1161 Send data to Movuina;
+#X obj 727 1047 t b f;
+#X obj 648 1047 t b f;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X coords 0 1 100 -1 900 500 1 0 0;
+#X restore 265 934 graph;
+#X text 271 37 Before to use the patch you might need to install MrPeach
+library ! Go to: Help/Find Externals Seek and install MrPeach library
+then restart PureData;
+#X obj 571 1117 pack f f f;
+#X text 346 471 SENSORS DATA;
+#X text 713 471 REPETITIONS;
+#X text 975 471 GESTURE RECOGNITION;
 #X connect 0 0 1 0;
 #X connect 0 1 1 1;
-#X connect 1 0 34 0;
+#X connect 1 0 33 0;
 #X connect 3 0 4 0;
 #X connect 4 0 0 0;
 #X connect 5 0 3 0;
@@ -144,8 +180,26 @@
 #X connect 27 0 26 0;
 #X connect 27 1 28 0;
 #X connect 27 2 29 0;
-#X connect 33 0 35 0;
-#X connect 33 1 36 0;
-#X connect 34 0 15 0;
-#X connect 34 1 27 0;
-#X connect 34 2 33 0;
+#X connect 33 0 15 0;
+#X connect 33 1 27 0;
+#X connect 33 2 38 0;
+#X connect 38 0 34 0;
+#X connect 38 1 35 0;
+#X connect 42 0 41 0;
+#X connect 43 0 44 0;
+#X connect 44 0 42 0;
+#X connect 45 0 41 0;
+#X connect 46 0 55 0;
+#X connect 47 0 62 0;
+#X connect 48 0 59 0;
+#X connect 49 0 58 0;
+#X connect 52 0 56 0;
+#X connect 53 0 52 0;
+#X connect 55 0 45 0;
+#X connect 56 0 45 0;
+#X connect 58 0 62 0;
+#X connect 58 1 62 2;
+#X connect 59 0 62 0;
+#X connect 59 1 62 1;
+#X connect 62 0 52 1;
+#X coords 0 1117 1 1116 120 80 0;
